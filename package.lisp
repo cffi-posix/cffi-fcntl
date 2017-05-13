@@ -15,6 +15,7 @@
    #:c-fcntl/pointer
    #:fcntl-getfl
    #:fcntl-setfl
+   #:open
    #:+o-rdonly+
    #:+o-wronly+
    #:+o-rdwr+
