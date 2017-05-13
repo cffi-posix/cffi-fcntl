@@ -16,6 +16,7 @@
    #:fcntl-getfl
    #:fcntl-setfl
    #:open
+   #:openat
    #:+o-rdonly+
    #:+o-wronly+
    #:+o-rdwr+

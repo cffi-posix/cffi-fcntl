@@ -34,3 +34,19 @@
   (if (= 0 (logand flags +o-creat+))
       (c-open/2 pathname flags)
       (c-open/3 pathname flags mode)))
+
+(defcfun ("openat" c-openat/3) :int
+  (dirfd :int)
+  (pathname :string)
+  (flags :int))
+
+(defcfun ("openat" c-openat/4) :int
+  (dirfd :int)
+  (pathname :string)
+  (flags :int)
+  (mode mode-t))
+
+(defun openat (dirfd pathname flags &optional mode)
+  (if (= 0 (logand flags +o-creat+))
+      (c-openat/3 dirfd pathname flags)
+      (c-openat/4 dirfd pathname flags mode)))
