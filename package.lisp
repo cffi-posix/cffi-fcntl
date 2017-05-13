@@ -7,6 +7,8 @@
    :cffi
    :cffi-errno
    :common-lisp)
+  (:shadow
+   #:open)
   (:export
    #:c-fcntl
    #:c-fcntl/int

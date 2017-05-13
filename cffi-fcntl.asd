@@ -10,6 +10,6 @@
   :defsystem-depends-on ("cffi-grovel")
   :depends-on ("cffi" "cffi-errno")
   :components
-  ((:file "cffi-fcntl-package")
-   (:cffi-grovel-file "grovel-fcntl" :depends-on ("cffi-fcntl-package"))
+  ((:file "package")
+   (:cffi-grovel-file "grovel-fcntl" :depends-on ("package"))
    (:file "cffi-fcntl" :depends-on ("grovel-fcntl"))))
