@@ -31,9 +31,12 @@
   (mode mode-t))
 
 (defun open (pathname flags &optional mode)
-  (if (= 0 (logand flags +o-creat+))
-      (c-open/2 pathname flags)
-      (c-open/3 pathname flags mode)))
+  (let ((fd (if (= 0 (logand flags +o-creat+))
+		(c-open/2 pathname flags)
+		(c-open/3 pathname flags mode))))
+    (when (< fd 0)
+      (error-errno "open"))
+    fd))
 
 (defcfun ("openat" c-openat/3) :int
   (dirfd :int)
@@ -47,6 +50,19 @@
   (mode mode-t))
 
 (defun openat (dirfd pathname flags &optional mode)
-  (if (= 0 (logand flags +o-creat+))
-      (c-openat/3 dirfd pathname flags)
-      (c-openat/4 dirfd pathname flags mode)))
+  (let ((fd (if (= 0 (logand flags +o-creat+))
+		(c-openat/3 dirfd pathname flags)
+		(c-openat/4 dirfd pathname flags mode))))
+    (when (< fd 0)
+      (error-errno "openat"))
+    fd))
+
+(defcfun ("creat" c-creat) :int
+  (file :string)
+  (mode mode-t))
+
+(defun creat (file mode)
+  (let ((fd (c-creat file mode)))
+    (when (< fd 0)
+      (error-errno "creat"))
+    fd))
