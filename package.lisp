@@ -17,6 +17,7 @@
    #:fcntl-setfl
    #:open
    #:openat
+   #:creat
    #:+o-rdonly+
    #:+o-wronly+
    #:+o-rdwr+
