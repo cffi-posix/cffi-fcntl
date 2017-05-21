@@ -5,8 +5,8 @@
   (:nicknames :fcntl)
   (:use
    :cffi
-   :cffi-errno
-   :common-lisp)
+   :common-lisp
+   :errno)
   (:shadow
    #:open)
   (:export
