@@ -15,10 +15,10 @@
   (cmd :int)
   (arg :pointer))
 
-(defun fcntl-getfl (fd)
+(defun getfl (fd)
   (c-fcntl fd +f-getfl+))
 
-(defun fcntl-setfl (fd flags)
+(defun setfl (fd flags)
   (c-fcntl/int fd +f-setfl+ flags))
 
 (defcfun ("open" c-open/2) :int

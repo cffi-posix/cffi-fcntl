@@ -13,8 +13,8 @@
    #:c-fcntl
    #:c-fcntl/int
    #:c-fcntl/pointer
-   #:fcntl-getfl
-   #:fcntl-setfl
+   #:getfl
+   #:setfl
    #:open
    #:openat
    #:creat
