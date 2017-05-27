@@ -6,7 +6,11 @@
 
 (in-package :cffi-fcntl.system)
 
-(defsystem "cffi-fcntl"
+(defsystem :cffi-fcntl
+  :name "cffi-fcntl"
+  :author "Thomas de Grivel <thoxdg@gmail.com>"
+  :version "0.1"
+  :description "Common Lisp wrapper for fcntl.h"
   :defsystem-depends-on ("cffi-grovel")
   :depends-on ("cffi" "cffi-errno")
   :components
