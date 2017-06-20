@@ -49,8 +49,8 @@
 
 (defun open (pathname flags &optional mode)
   (let ((fd (if (= 0 (logand flags +o-creat+))
-		(c-open/2 pathname flags)
-		(c-open/3 pathname flags mode))))
+                (c-open/2 pathname flags)
+                (c-open/3 pathname flags mode))))
     (when (< fd 0)
       (error-errno "open"))
     fd))
@@ -68,8 +68,8 @@
 
 (defun openat (dirfd pathname flags &optional mode)
   (let ((fd (if (= 0 (logand flags +o-creat+))
-		(c-openat/3 dirfd pathname flags)
-		(c-openat/4 dirfd pathname flags mode))))
+                (c-openat/3 dirfd pathname flags)
+                (c-openat/4 dirfd pathname flags mode))))
     (when (< fd 0)
       (error-errno "openat"))
     fd))
