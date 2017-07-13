@@ -22,7 +22,6 @@
 
 (ctype mode-t "mode_t")
 (ctype off-t "off_t")
-(ctype off64-t "off64_t")
 (ctype pid-t "pid_t")
 
 (constant (+s-ifmt+ "S_IFMT"))
