@@ -114,6 +114,11 @@
    #:c-fcntl
    #:c-fcntl/int
    #:c-fcntl/pointer
+   #:c-open/2
+   #:c-open/3
+   #:c-openat/3
+   #:c-openat/4
+   #:c-creat
    #:creat
    #:getfl
    #:open
